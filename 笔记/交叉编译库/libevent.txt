@@ -1,0 +1,41 @@
+
+
+
+
+下载libevent源码
+https://libevent.org/
+
+先安装openssl
+sudo apt install libssl-dev
+
+安装指定版本gcc和g++
+# 查看可以安装的版本
+apt-cache search aarch64
+# 选择可以安装的版本进行安装
+sudo apt-get install gcc-10-aarch64-linux-gnu　
+sudo apt-get install g++-10-aarch64-linux-gnu
+# 安装依赖
+sudo apt --fix-broken install
+
+# 查看版本
+aarch64-linux-gnu-g++-10 -v
+aarch64-linux-gnu-gcc-10 -v
+
+
+
+sudo ./configure --prefix=/usr/aarch64-linux-gnu/libevent --enable-static --host=aarch64-linux-gnu CC=aarch64-linux-gnu-gcc CXX=aarch64-linux-gnu-g++
+
+--enable-static 为静态编译
+--prefix=/usr/aarch64-linux-gnu 编译后生成的路径
+CC=aarch64-linux-gnu-gcc  指定编译工具链
+CXX=aarch64-linux-gnu-g++
+--disable-openssl
+
+sudo make -j4
+sudo make install
+
+
+
+
+/home/cs/pi_tool/gcc-linaro-6.5.0-2018.12-x86_64_aarch64-linux-gnu/bin
+
