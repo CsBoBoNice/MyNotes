@@ -1,0 +1,82 @@
+查看系统是32位还是64位
+getconf LONG_BIT
+
+
+查看系统参数
+uname -a
+
+
+树莓派配置界面
+sudo raspi-config
+
+从本地拷贝到远端
+scp ./build/bin/arm64/* pi@192.168.103.200:/home/pi
+
+从远端拷贝到本地
+scp -r pi@192.168.103.200:/usr/aarch64-linux-gnu/* ./
+
+
+scp -r /root/lk root@43.224.34.73:/home/pi
+
+
+scp -r ./EJ_drone/ pi@192.168.103.200:/home/pi
+
+
+查看是否支持c++17
+arm-linux-gnueabihf-g++ -std=c++14
+以下代表不支持
+unrecognized command line option ‘-std=c++14’
+
+树莓派关闭usb电源
+sudo uhubctl -l 1-1 -p 1 -a off -r 100
+
+shell里使用明文密码
+echo "xxxxx" | sudo -S xxxxxx
+
+
+打包
+tar -czvf EJ_drone.tar.gz EJ_drone/
+解压
+tar -xzvf EJ_drone.tar.gz
+
+
+
+
+
+
+
+
+
+查看树莓派温度
+cat /sys/class/thermal/thermal_zone0/temp
+
+安装指定版本gcc和g++
+# 查看可以安装的版本
+apt-cache search aarch64 | grep gcc-
+# 选择可以安装的版本进行安装
+sudo apt-get install gcc-9-aarch64-linux-gnu　
+sudo apt-get install g++-9-aarch64-linux-gnu
+# 安装依赖
+sudo apt --fix-broken install
+
+# 查看版本
+aarch64-linux-gnu-g++-9 -v
+aarch64-linux-gnu-gcc-9 -v
+
+查文件
+sudo find / -name libc.so.6
+
+查看系统glibc支持的版本
+strings /usr/aarch64-linux-gnu/lib/libc.so.6 | grep GLIBC_
+strings /lib/aarch64-linux-gnu/libc.so.6 | grep GLIBC_
+
+
+
+
+
+
+
+
+显示文件修改时间
+ls -l --time-style=long-iso
+stat 1.jpeg

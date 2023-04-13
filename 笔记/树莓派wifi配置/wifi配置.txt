@@ -1,0 +1,6 @@
+sudo vim /etc/network/interfaces
+
+cat /etc/wpa_supplicant/wpa_supplicant.conf
+
+sudo vim /etc/dhcpcd.conf
+

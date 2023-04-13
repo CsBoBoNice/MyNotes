@@ -1,0 +1,90 @@
+
+
+
+
+
+
+git status
+git add . 
+git commit -m "信息"
+git push
+git branch
+git checkout 分支名
+git pull
+
+
+克隆仓库
+git clone https://git.ejdrone.com/chenshu/EJ_drone_1_0
+
+#查看制定文件状态
+git status [文件名]
+
+#查看所有文件状态
+git status
+
+#添加所有文件到暂存区
+git add . 
+
+#提交暂存区中的内容到本地仓库 -m:提交的信息
+git commit -m "信息"
+
+推送最新修改
+git push
+
+第一次推送master分支的所有内容
+git push -u origin master
+
+推送最新修改
+git push origin master
+
+
+
+#列出本地所有分支
+git branch
+
+#列出所有远程分支
+git branch -r
+
+#新建一个分支，但依然停留在当前分支
+git branch 分支名
+
+#切换分支
+git checkout 分支名
+
+#新建一个分支，并切换到该分支
+git checkout -b 分支名
+
+#合并指定分支到当前分支
+git merge 分支名
+
+#删除分支
+git branch -d 分支名
+
+#删除远程分支
+git push origin --delete 分支名
+git branch -dr 分支名
+
+
+更新远程仓库的代码为最新的
+git fetch --all
+
+让本地代码与origin / master完全相同
+git reset --hard origin/master
+
+git pull拉取远程代码
+git pull origin master
+
+git merge将暂存区代码更新到本地工作区
+git merge master
+
+删除文件
+git rm -r --cached 文件/文件夹名称
+
+
+
+
+
+
+
+
+

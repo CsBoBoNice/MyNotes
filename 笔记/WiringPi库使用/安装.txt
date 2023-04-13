@@ -1,0 +1,14 @@
+
+
+
+
+./build
+
+编译出的库文件
+/usr/local/lib/libwiringPi.so.2.70
+/usr/local/lib/libwiringPiDev.so.2.70
+
+查看所有gpio
+gpio readall
+
+
