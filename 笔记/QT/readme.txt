@@ -24,3 +24,16 @@ sudo apt install mesa-common-dev
 chmod +x qt-unified-linux-x64-4.5.2-online.run
 
 ./qt-unified-linux-x64-4.5.2-online.run --mirror https://mirrors.tuna.tsinghua.edu.cn/qt
+
+
+
+交叉编译
+下载源码
+https://download.qt.io/archive/qt/6.2/6.2.4/
+
+
+
+
+
+
+
