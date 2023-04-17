@@ -5,6 +5,11 @@ http://download.qt.io/
 // 最新的都是在线安装,选择在线安装包
 archive/online_installers/
 
+https://download.qt.io/official_releases/online_installers/
+
+qt-unified-windows-x64-4.5.2-online.exe --mirror https://mirrors.aliyun.com/qt
+qt-unified-windows-x64-4.5.2-online.exe --mirror https://mirrors.tuna.tsinghua.edu.cn/qt/
+
 qt-unified-windows-x64-4.5.1-online.exe
 
 qt-unified-windows-x64-4.5.2-online.exe --mirror https://mirrors.aliyun.com/qt
