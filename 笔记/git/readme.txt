@@ -16,6 +16,9 @@ git config --list
 生成密钥
 ssh-keygen -t rsa -C "751541594@qq.com"
 cat ./.ssh/id_rsa.pub 
+或
+cat /c/Users/75154/.ssh/id_rsa.pub
+
 
 测试是否设置成功
 ssh -T git@github.com
