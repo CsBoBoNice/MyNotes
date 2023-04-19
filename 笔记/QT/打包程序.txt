@@ -1,0 +1,27 @@
+
+
+
+
+
+将可执行文件拷贝到指定目录
+
+用Git Bash在指定目录打开
+
+
+/c/Qt/6.3.2/mingw_64/bin/windeployqt.exe EJ_GroundStation.exe
+
+/c/Qt/6.3.2/mingw_64/bin/windeployqt.exe --no-quick-import --no-translations --no-virtualkeyboard --no-compiler-runtime --no-opengl-sw --no-system-d3d-compiler EJ_GroundStation.exe
+
+/c/Qt/6.3.2/mingw_64/bin/windeployqt.exe --no-quick-import --no-translations --no-virtualkeyboard --no-opengl-sw --no-system-d3d-compiler EJ_GroundStation.exe
+
+
+拷贝C:\Qt\6.3.2\mingw_64\bin目录下3个文件到指定目录
+libgcc_s_seh-1.dll
+libstdc++-6.dll	
+libwinpthread-1.dll
+
+
+
+
+
+
