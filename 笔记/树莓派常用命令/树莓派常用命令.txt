@@ -80,3 +80,24 @@ strings /lib/aarch64-linux-gnu/libc.so.6 | grep GLIBC_
 显示文件修改时间
 ls -l --time-style=long-iso
 stat 1.jpeg
+
+
+
+格式化m2固态硬盘
+sudo mkfs.ext4 /dev/nvme0n1
+挂载
+sudo mount /dev/nvme0n1 /home/ftpuser/wifi_camera/
+测试读
+sudo dd if=/dev/nvme0n1 of=/dev/null bs=10M count=1000
+测试写
+sudo dd if=/dev/zero of=/dev/nvme0n1 bs=10M count=1000
+
+
+
+
+
+
+
+
+
+
