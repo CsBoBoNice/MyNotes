@@ -15,6 +15,13 @@ qt-unified-windows-x64-4.5.1-online.exe
 qt-unified-windows-x64-4.5.2-online.exe --mirror https://mirrors.aliyun.com/qt
 qt-unified-windows-x64-4.5.2-online.exe --mirror https://mirrors.tuna.tsinghua.edu.cn/qt
 
+
+// 更新组件
+./MaintenanceTool.exe --mirror https://mirrors.tuna.tsinghua.edu.cn/qt
+
+./MaintenanceTool.exe --mirror https://mirrors.aliyun.com/qt
+
+
 安装组件中
 勾选msvc2019 64-bit
 勾选Qt Creator
