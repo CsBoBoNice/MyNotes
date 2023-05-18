@@ -94,7 +94,8 @@ sudo dd if=/dev/zero of=/dev/nvme0n1 bs=10M count=1000
 
 
 
-
+更新树莓派时间
+sudo timedatectl set-ntp true
 
 
 
