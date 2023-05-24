@@ -98,7 +98,8 @@ sudo dd if=/dev/zero of=/dev/nvme0n1 bs=10M count=1000
 sudo timedatectl set-ntp true
 
 
-
+添加开机自启动
+将命令加入/etc/rc.local
 
 
 

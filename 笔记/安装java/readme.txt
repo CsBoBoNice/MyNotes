@@ -95,15 +95,3 @@ cd apache-tomcat-8.5.63/bin/
 ps -ef | grep tomcat
 #强制关闭某个进程
 kill -9 [进程ID]
-
-
-开机自启动
-
-在/etc/rc.local加入如下命令
-/home/pi/wifi_pack/apache-tomcat-8.5.89/bin/startup.sh &
-
-修改/home/pi/wifi_pack/apache-tomcat-8.5.89/bin/startup.sh
-加入
-export JAVA_HOME=/usr/local/lib/jdk1.8
-
-
