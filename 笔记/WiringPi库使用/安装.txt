@@ -2,6 +2,11 @@
 
 
 
+http://wiringpi.com/
+https://github.com/WiringPi/WiringPi
+
+unzip WiringPi-master.zip
+
 ./build
 
 编译出的库文件
@@ -12,3 +17,28 @@
 gpio readall
 
 
+在CMakeLists.txt里添加
+/**************************************************************************/
+# 查找并链接WiringPi库 安装路径
+find_library(WIRINGPI_LIB NAMES wiringPi PATHS ${PROJECT_SOURCE_DIR}/lib/wiringPi/lib/)
+if (NOT WIRINGPI_LIB)
+    message(FATAL_ERROR "WiringPi library not found")
+endif()
+
+# 将WiringPi库链接到可执行文件
+target_link_libraries(${PROJECT_NAME} ${WIRINGPI_LIB})
+
+/**************************************************************************/
+
+
+将WiringPi库头文件放到wiringPi/include
+文件路径 /usr/local/include/
+scp -r  pi@192.168.103.198:/usr/local/include/ ./
+
+将WiringPi库动态库放到wiringPi/lib
+文件路径 /usr/local/lib/
+scp  pi@192.168.103.198:/usr/local/lib/* ./
+
+还需要libcrypt动态库
+文件路径 /lib/aarch64-linux-gnu/libcrypt.so
+scp  pi@192.168.103.198:/lib/aarch64-linux-gnu/libcrypt.* ./
