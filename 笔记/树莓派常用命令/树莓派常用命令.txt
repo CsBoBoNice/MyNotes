@@ -102,4 +102,55 @@ sudo timedatectl set-ntp true
 将命令加入/etc/rc.local
 
 
+树莓派设置引脚开关机
+在文件/boot/config.txt加入
+dtoverlay=gpio-shutdown
+短接第三行引脚,即gpio_3和GND即可开关机
 
+
+树莓派重新映射串口
+
+关闭串口ssh
+sudo raspi-config
+
+选到 
+3 Interface Options    Configure connections to peripherals
+
+选到
+I6 Serial Port   Enable/disable shell messages on the serial connection 
+
+Would you like a login shell to be accessible over serial? 
+选择yes
+
+Would you like the serial port hardware to be enabled? 
+选择no
+
+The serial login shell is disabled 
+The serial interface is enabled
+
+配置成功
+选择Finish重启即可
+
+
+查看串口映射关系
+ls -l /dev/serial*
+lrwxrwxrwx 1 root root 7 May 27 12:10 /dev/serial0 -> ttyAMA0
+lrwxrwxrwx 1 root root 5 May 27 12:10 /dev/serial1 -> ttyS0
+
+树莓派CPU内部有两个串口，分别是硬件串口（/dev/ttyAMA0）与mini串口（/dev/ttyS0）。
+ttyAMA0有单独的波特率时钟源，性能高，可靠。
+ttyS0的时钟源又内核提供，会受操作系统影响，不稳定。
+可以这样理解，ttyAMA0是硬件串口，ttyS0是软件串口。
+
+ttyAMA0默认分配给蓝牙芯片使用
+ttyS0默认分配给硬件GPIO14（UART_TXD）与GPIO15（UART_RXD)。
+
+在文件/boot/config.txt加入
+dtoverlay=pi3-miniuart-bt #切换串口的映射关系
+dtoverlay=pi3-disable-bt  #关蓝牙
+
+删除蓝牙启动项服务。在终端上输入
+sudo systemctl disable hciuart
+
+查看io口映射状态
+sudo raspi-gpio get
