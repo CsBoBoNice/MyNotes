@@ -120,10 +120,10 @@ sudo raspi-config
 I6 Serial Port   Enable/disable shell messages on the serial connection 
 
 Would you like a login shell to be accessible over serial? 
-选择yes
+选择no
 
 Would you like the serial port hardware to be enabled? 
-选择no
+选择yes
 
 The serial login shell is disabled 
 The serial interface is enabled
