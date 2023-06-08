@@ -146,6 +146,14 @@ ttyAMA0默认分配给蓝牙芯片使用
 ttyS0默认分配给硬件GPIO14（UART_TXD）与GPIO15（UART_RXD)。
 
 在文件/boot/config.txt加入
+
+dtoverlay=pi3-miniuart-bt
+dtoverlay=pi3-disable-bt
+
+dtoverlay=pi4-miniuart-bt
+dtoverlay=pi4-disable-bt
+
+
 dtoverlay=pi3-miniuart-bt #切换串口的映射关系
 dtoverlay=pi3-disable-bt  #关蓝牙
 
@@ -154,3 +162,33 @@ sudo systemctl disable hciuart
 
 查看io口映射状态
 sudo raspi-gpio get
+
+打开树莓派其他串口
+在文件/boot/config.txt加入
+dtoverlay=uart2
+dtoverlay=uart3
+dtoverlay=uart4
+dtoverlay=uart5
+
+GPIO14 = TXD0 -> ttyAMA0
+GPIO15 = RXD0 -> ttyAMA0
+
+GPIO0 = TXD2 -> ttyAMA1
+GPIO1 = RXD2 -> ttyAMA1
+
+GPIO4 = TXD3 -> ttyAMA2
+GPIO5 = RXD3 -> ttyAMA2
+
+GPIO8 = TXD4 -> ttyAMA3
+GPIO9 = RXD4 -> ttyAMA3
+
+GPIO12 = TXD5 -> ttyAMA4
+GPIO13 = RXD5 -> ttyAMA4
+
+https://blog.csdn.net/AuroraSmith/article/details/126403497
+
+
+
+
+
+
